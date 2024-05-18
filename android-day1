@@ -1,0 +1,226 @@
+fun main() {
+    println("Hello, Android")
+    
+    
+    val x = 1 
+    val y = 3
+    
+    println(x)
+    val z = x+y //1+4
+    println(z)
+    
+    //constant *val -> once declare it, it cannot change the value anymore
+    val name = "hafidzi"
+    //name = "hafidzi zulkiflee"
+    println(name)
+    
+    //var = varialble -> can change the value 
+    var fullName = "hafidzi"
+    fullName = "hafidzi zulkiflee"
+    println(fullName)
+    
+    //jenis Data / 
+    //string - perkataan/ ""
+    //char - karekter huruf / ''
+    
+    val alamat:String = "setapak"
+    println(alamat)
+    
+    var jantina:Char= 'L'
+    println(jantina)
+    
+    val message = "Nama Saya adalah "+fullName //operation +
+    println(message)
+    
+    //string interpolation
+    
+    val anotherMessage = "Nama saya adalah $fullName dan saya tinggal di $alamat"
+    println(anotherMessage)
+    
+    //number
+    
+    var num1:Double = 9.0
+    var num2:Int = 5
+    
+    var sum = num1+num2 //9+5
+    println(sum)
+    
+    // operation +,-,*,/,%
+    
+    var minus = num1-num2
+    println(minus)
+    
+    var product = num1*num2
+    println(product)
+    
+    var division = num1/num2
+    println(division)
+    
+    var modulo = num1%num2
+    println(modulo)
+    
+    //boolean =true/false
+    //boolean data type us nornamlly use for logic, ex: when using if else statement
+    var eaten =true
+    var tired:Boolean = false
+    
+    //boolean opration : &&/and, || (or), ! (Reverse)
+    println(eaten && tired)
+    println(eaten || tired)
+    println(!eaten)
+    
+    //null= no value
+    
+    var profession = null //(no value)
+    // to declare a variable as nullable the data type needs to be added with?package
+    
+    var newProfession:String?=null //? = can be null or can be value
+    println(newProfession)
+    println(profession)
+    newProfession = "Trainer"
+    println(newProfession)
+    
+    var tinggi:Double = 162.0
+    var berat:Double = 70.0
+    var bmi = berat/((tinggi/100)*(tinggi/100))
+    println(bmi)
+    
+    //Array = collection of repeated item
+    
+    var score= arrayOf(60,80,100) //item 
+    println(score[0]) //every item start with 0
+    println(score[1])
+    println(score.size) //how maby item in the array
+     
+    //readline() = stop to user input data
+    
+    var myAge = 16
+    if (myAge <18) 
+    println ("You are underage")
+     println("The End")
+     
+     
+     //if else
+     if (myAge <18) 
+         println ("You are underage")
+      else
+         println("You can watch the movie")
+  
+if (myAge < 13)
+    println("yiy cannot watch the movie")
+else if (myAge < 18)
+    println("You Can watch with parent (PG)")
+else 
+    println("you can watch the movie")
+
+    
+    //bawah 13 tahun tak boleh
+    //13 tahun ke atas kena ada parent
+    //18 tahun ke atas boleh
+     var childAge = 17
+    var parent = true
+     if (childAge <13){
+         println("you cannot watch the movie")
+     }
+     else if (childAge <18 && parent == false){
+         println("you cannot watch the movie")
+     }
+     else if (childAge <18 && parent == true){
+         println("you can watch the movie")
+     }
+     else{
+         println("you can watch the movie")
+     }
+     
+     //swtichcase
+     
+     var size = 1
+    var price:Int? = null
+    
+    when (size){
+        1-> price = 5
+        2-> price = 7
+        3-> price = 9
+        else-> println("we dont support othe size")
+    }
+    println(price)
+    
+    for(i in 0..5){
+        println("i=$i")
+    }
+    
+    for(i in 5 downTo 0){
+        println("i=$i")
+    }
+    
+     for(i in 1..5 step 2){
+        println("i=$i")
+    }
+     
+       for(i in 5 downTo 1 step 2){
+        println("i=$i")
+    }
+       
+      var language = arrayOf ("Ruby", "Kotlin","Python", "Jave") 
+      
+      for (item in language){
+          println(item)
+      }
+      
+       for (i in 0..language.size - 1){
+          println("item at index $i is ${language[i]}")
+      }
+       
+       //while
+       var x1 = 1
+       while (x1<5){
+           println("x1 = $x1")
+           x1++
+       }
+       
+       //do while
+       var x2 = 30
+       do{
+           println ("x2 = $x2")
+           x2++
+       }
+       while(x2<=5)
+       
+       var x3 = 1
+    do{
+        println ("x=$x3")
+        x3++
+        if (x3 == 3) break
+    }
+    while (x3<=5)
+    
+        var x4 = 0
+    do{
+        x4++
+        if (x4 == 3) {continue}
+        println("x4=$x4")
+    }
+    while (x4<=5)
+    
+    sayHello()
+    sayGoodbye("hafidzi")
+    println(calculateBmi(170.0,80.0))
+    
+}
+
+//Declare function
+fun sayHello(){println("Hello World")}
+
+fun sayGoodbye(name:String){
+    println("Goodbye $name");
+}
+
+//return
+
+fun sum(a:Int, b:Int):Int {
+    return a+b
+}
+
+fun calculateBmi(height:Double, weight:Double): Double{
+    return weight / ((height/100)*(height/100))
+}
